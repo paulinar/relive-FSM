@@ -26,8 +26,11 @@ def query(q, fl="id"):
     r = requests.get(url)
     return r.json()
 
-def search(request):
-	result = query(q="fsmTitle:Savio")['response']
-	print result
-	template = get_template("templates/timeline.html")
-	return HttpResponse(template.render(Context({'foo':'bar'})))
+def search(request, search_query=""):
+	if query == "":
+		print "Empty Query"
+		return
+
+	# result = query(q="fsmTitle:Savio")['response']
+	result = query(q=search_query)['response']
+	return HttpResponse(json.dumps(result), content_type="application/json")
