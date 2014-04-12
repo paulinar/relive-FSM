@@ -33,11 +33,11 @@
 
 								<div class="left-inner-addon ">
 								    <i class="glyphicon glyphicon-search"></i>
-								    <input type="text" class="form-control" placeholder="e.g. Mario Savio" />
+								    <input id="search-bar" type="text" class="form-control" placeholder="e.g. Mario Savio" />
 								</div>
 
 								<div id="explore-button">
-									<button type="submit" class="btn btn-default">Explore</button>
+									<button id="search-button" type="submit" class="btn btn-default">Explore</button>
 								</div>
 
 							</nav>
@@ -96,6 +96,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="{% static "assets/js/jquerypp.custom.js" %}"></script>
 		<script src="{% static "assets/js/jquery.bookblock.js" %}"></script>
+		<script src="{% static "assets/js/timeline.js" %}"></script>
 		<script>
 			var Page = (function() {
 				var config = {
