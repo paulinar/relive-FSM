@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Search</title>
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static "assets/css/timeline.css" %}">
+	<script src="{% static "assets/js/timeline.js" %}"></script>
+</head>
+<body>
+    <form action="/search/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
+
+
