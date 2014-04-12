@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    console.log( "timeline.js ready!" );
+    console.log( "custom.js ready!" );
     $("#search-button").click(function() {
     	$("#my-picture").fadeOut("slow", function() {
     		var searchQuery = $("#search-bar").val();

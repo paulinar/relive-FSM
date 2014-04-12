@@ -66,7 +66,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 TEMPLATE_DIRS = (
-    '/Users/Mari/Documents/codeNStuff/reliveFSM/reliveFSM/timeline'
+    '/Users/paulinaramos/Desktop/reliveFSM/reliveFSM/timeline'
     # os.path.join('../' + os.path.dirname(__file__), 'templates').replace('\\','/'),
 )
 
@@ -88,7 +88,7 @@ STATIC_ROOT = ''
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    ('assets', '/Users/Mari/Documents/codeNStuff/reliveFSM/reliveFSM/static/timeline'),
+    ('assets', '/Users/paulinaramos/Desktop/reliveFSM/reliveFSM/static/timeline'),
 )
 
 

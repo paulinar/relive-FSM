@@ -46,7 +46,6 @@
 	-webkit-align-items: center;
 	align-items: center;
 	background-color: #003262;
-	background-image: url("../images/old-text-bg.jpg");
 	background-size:900px 675px;
 }
 
@@ -71,6 +70,7 @@
 	float: left;
 	height: 100%;
 	background-color: #003262;
+	overflow: auto;
 }
 
 .bb-custom-side p {
@@ -79,9 +79,12 @@
 }
 
 .bb-custom-wrapper h3 {
-	font-size: 1.4em;
+	font-size: 18px;
 	font-weight: 300;
+	font-style: italic;
 	margin: 0.4em 0 1em;
+	padding-left: 5px;
+	background-color: #00b2a5;
 }
 
 .bb-custom-wrapper > nav {
@@ -100,7 +103,7 @@
 	height: 40px;
 	text-align: center;
 	border-radius: 2px;
-	background: #1baede; /* background color of buttons */
+	background: #00b2a5; /* background color of buttons */
 	color: #fff;
 	font-size: 0;
 	margin: 2px;
@@ -167,4 +170,8 @@
 #tagline {
 	border-top: 1px;
 	border-color: #ffffff;
+}
+
+.bb-custom-side::-webkit-scrollbar {
+ display: none;
 }

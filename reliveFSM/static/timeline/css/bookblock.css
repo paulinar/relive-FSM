@@ -49,7 +49,7 @@
 	width: 100%;
 	top: 0;
 	left: 0;
-	background: #fff;
+	background: #003262;;
 }
 
 .bb-outer {
@@ -99,7 +99,8 @@
 
 .bb-overlay, 
 .bb-flipoverlay {
-	background-color: rgba(0, 0, 0, 0.7);
+/*	background-color: rgba(0, 0, 0, 0.7);*/
+	background-color: #003262;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -109,7 +110,8 @@
 }
 
 .bb-flipoverlay {
-	background-color: rgba(0, 0, 0, 0.2);
+/*	background-color: rgba(0, 0, 0, 0.2);*/
+	background-color: #003262;
 }
 
 /* */
@@ -195,7 +197,7 @@
 	top: 0;
 	left: 0;
 	display: none;
-	background: #fff;
+	background: #003262;
 }
 
 /* No JS */
