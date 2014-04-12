@@ -3,8 +3,6 @@
 }
 
 #timeline-wrapper {
-	height: 600px;
-	width: 80%;
 	position: relative;
 	background-color: black;
 	overflow: scroll;
@@ -43,8 +41,7 @@ h1 {
 
 .search-results {
 	background-color: #ffffff;
-	width: 90%;
-	height: 90%;
+	width: 100%;
 	border-radius: 45px;
 }
 
@@ -141,7 +138,8 @@ h1 {
     background: #3594cb;
     color: #fff;
     padding: 2em;
-    font-size: 1.2em;
+    font-size: 1em;
+    overflow: scroll;
     font-weight: 300;
     line-height: 1.4;
     position: relative;
@@ -267,4 +265,19 @@ h1 {
         left: auto;
         margin: -55px 5px 0 0px;
     }   
+}
+
+.cbp_tmlabel img {
+	width: 100px !important;
+	float: right;
+}
+
+.item-info {
+	display: inline-block;
+	width: 200px;
+	float: left;
+	overflow: scroll;
+}
+.item-attr {
+	display: block;
 }
