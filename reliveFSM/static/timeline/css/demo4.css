@@ -27,7 +27,7 @@
 	width: 50%;
 	float: left;
 	height: 100%;
-	overflow: hidden;
+	overflow: scroll;
 	/* Centering with flexbox */
 	display: -webkit-box;
 	display: -moz-box;

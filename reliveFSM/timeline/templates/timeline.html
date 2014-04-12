@@ -45,92 +45,29 @@
 					<div class="bb-custom-side">
 						<div class="search-results">
 							<div id="timeline-wrapper">
-							<ul class="cbp_tmtimeline">
-								<li>
-									<time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span> <span>18:30</span></time>
-									<div class="cbp_tmicon cbp_tmicon-phone"></div>
-									<div class="cbp_tmlabel">
-										<h2>Memorandum to Mario Savio</h2>
-										<a href="http://digitalassets.lib.berkeley.edu/fsm/ucb/images/brk00039970a_b.jpg"><img src="http://digitalassets.lib.berkeley.edu/fsm/ucb/images/brk00039970a_b.jpg"></a>
-										<div class="item-info">
-											<span class="item-attr">Resource: Box 3:39</span>
-											<span class="item-attr">Identifier: CU-309</span>
-											<span class="item-attr">Type: Box</span>
-											<span class="item-attr">Creator: Free Speech Movement</span>
-										</div>
-									</div>
-								</li>
-								<li>
-									<time class="cbp_tmtime" datetime="2013-04-11T12:04"><span>4/11/13</span> <span>12:04</span></time>
-									<div class="cbp_tmicon cbp_tmicon-screen"></div>
-									<div class="cbp_tmlabel">
-										<h2>Greens radish arugula</h2>
-										<p>Caulie dandelion maize...</p>
-									</div>
-								</li>
-								<li>
-									<time class="cbp_tmtime" datetime="2013-04-13 05:36"><span>4/13/13</span> <span>05:36</span></time>
-									<div class="cbp_tmicon cbp_tmicon-mail"></div>
-									<div class="cbp_tmlabel">
-										<h2>Sprout garlic kohlrabi</h2>
-										<p>Parsnip lotus root...</p>
-									</div>
-								</li>
-								<li>
-									<time class="cbp_tmtime" datetime="2013-04-15 13:15"><span>4/15/13</span> <span>13:15</span></time>
-									<div class="cbp_tmicon cbp_tmicon-phone"></div>
-									<div class="cbp_tmlabel">
-										<h2>Watercress ricebean</h2>
-										<p>Peanut gourd nori...</p>
-									</div>
-								</li>
-								<li>
-									<time class="cbp_tmtime" datetime="2013-04-16 21:30"><span>4/16/13</span> <span>21:30</span></time>
-									<div class="cbp_tmicon cbp_tmicon-earth"></div>
-									<div class="cbp_tmlabel">
-										<h2>Courgette daikon</h2>
-										<p>Parsley amaranth tigernut...</p>
-									</div>
-								</li>
+							<ul id="timeline-list" class="cbp_tmtimeline">
 							</ul>
 						</div>
 						</div>
 					</div>
 				</div>
+				<div class="bb-item">
+
+				</div>
 			</div>
 
 			<nav>
-				<a id="bb-nav-first" href="#" class="bb-custom-icon bb-custom-icon-first">First page</a>
 				<a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
 				<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
-				<a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a>
 			</nav>
 
 		</div>
 
 	</div><!-- /container -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript">
-	var timeline_config = {
-		width:              '100%',
-		height:             '600',
-		source:             'path_to_json/or_link_to_googlespreadsheet',
-            embed_id:           'timeline-embed',               //OPTIONAL USE A DIFFERENT DIV ID FOR EMBED
-            start_at_end:       false,                          //OPTIONAL START AT LATEST DATE
-            start_at_slide:     '4',                            //OPTIONAL START AT SPECIFIC SLIDE
-            start_zoom_adjust:  '3',                            //OPTIONAL TWEAK THE DEFAULT ZOOM LEVEL
-            hash_bookmark:      true,                           //OPTIONAL LOCATION BAR HASHES
-            font:               'Bevan-PotanoSans',             //OPTIONAL FONT
-            debug:              true,                           //OPTIONAL DEBUG TO CONSOLE
-            lang:               'fr',                           //OPTIONAL LANGUAGE
-            maptype:            'watercolor',                   //OPTIONAL MAP STYLE
-            css:                'path_to_css/timeline.css',     //OPTIONAL PATH TO CSS
-            js:                 'path_to_js/timeline-min.js'    //OPTIONAL PATH TO JS
-        }
-        </script>
-        <script type="text/javascript" src="http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js"></script>
         <script src="{% static "assets/js/jquerypp.custom.js" %}"></script>
         <script src="{% static "assets/js/jquery.bookblock.js" %}"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
         <script src="{% static "assets/js/timeline.js" %}"></script>
         <script>
         var Page = (function() {
@@ -211,6 +148,25 @@
 				</script>
 				<script>
 				Page.init();
+				</script>
+				<script id="timeline-template" type="text/html">
+				 {% verbatim %}
+
+				 	{{ #. }}
+						   <div class="item">
+						   		<div class="item-picture">
+						   			<a href="{{ fsmImageUrl.0 }}"><img src="{{ fsmImageUrl.0 }}"></a>
+						   		</div>
+						   		<h2 class="title">{{ fsmTitle.0 }}</h2>
+						   		<span class="type">{{fsmRelatedTitle.0}}</span>
+						   		<div class="item-info">
+									<span class="item-attr">Resource: {{fsmTypeOfResource.0}} {{fsmTypeOfResource.1}}</span>
+									<span class="item-attr">Identifier: {{fsmIdentifier.0}}</span>
+									<span class="item-attr">Creator: {{fsmCreator.0}}</span>
+								</div>
+						   </div>
+					{{ /.}}
+				{% endverbatim %}
 				</script>
 			</body>
 			</html>

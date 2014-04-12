@@ -7,7 +7,15 @@ $( document ).ready(function() {
 		  type: "GET",
 		  url: "search/?q=" + searchQuery,
 		  success: function(data) {
-		    console.log(data);
+		  	// var template = "derp";
+		  	// var html = Mustache.to_html(template, data);
+		  	// $("#timeline-list").html(html);
+		    console.log(data.docs);
+			var template = $("#timeline-template").html();
+			console.log(template)
+			var html = Mustache.render(template, data.docs);
+			console.log(html)
+			$("#timeline-list").html(html);
 		  }
 		});
     });
