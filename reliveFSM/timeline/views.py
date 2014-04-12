@@ -48,9 +48,6 @@ def search(request):
 def index(request):
 	return render(request, "templates/timeline.html")
 
-def test(request):
-	return render(request, "templates/timeline2.html")
-
 # def timeline(request):
 # 	print "in timeline"
 # 	if 'q' in request.GET:
