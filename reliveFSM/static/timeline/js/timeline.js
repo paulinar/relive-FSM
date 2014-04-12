@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     console.log( "timeline.js ready!" );
     $("#search-button").click(function() {
+    	$("#my-picture").fadeOut("slow");
     	var searchQuery = $("#search-bar").val();
     	console.log(searchQuery);
     	$.ajax({
