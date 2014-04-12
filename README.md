@@ -1,7 +1,6 @@
 reliveFSM
 =========
-
-hackz
+Instructions
 1. pip install Django
 2. cd reliveFSM
 3. python manage.py runserver
