@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
+    console.log( "timeline.js ready!" );
     $("#search-button").click(function() {
     	var searchQuery = $("#search-bar").val();
     	console.log(searchQuery);
@@ -7,7 +7,6 @@ $( document ).ready(function() {
 		  type: "GET",
 		  url: "search/?q=" + searchQuery,
 		  success: function(data) {
-		    console.log("success");;
 		    console.log(data);
 		  }
 		});
