@@ -21,7 +21,7 @@ def query(q, fl="id"):
 			urllib.urlencode({'q':q,
 							  'fl':fl,
 							  'wt':'json',
-							  'rows':30,
+							  'rows':100,
 							  'app_id':HACKFSM_ID,
 							  'app_key':HACKFSM_KEY})
 	r = requests.get(url)

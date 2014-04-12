@@ -7,16 +7,35 @@ $( document ).ready(function() {
 		  type: "GET",
 		  url: "search/?q=" + searchQuery,
 		  success: function(data) {
-		  	// var template = "derp";
-		  	// var html = Mustache.to_html(template, data);
-		  	// $("#timeline-list").html(html);
 		    console.log(data.docs);
+		    filterDate = $("#filter-date").is(":checked");
+		    filterImage = $("#filter-image").is(":checked");
+		    if(filterDate) {
+		    	var withDate = filter("date", data.docs);
+		        data.docs = withDate;
+		    }
+		    if(filterImage) {
+		    	var withImage = filter("image", data.docs);
+		        data.docs = withImage;
+		    }
 			var template = $("#timeline-template").html();
-			console.log(template)
 			var html = Mustache.render(template, data.docs);
-			console.log(html)
 			$("#timeline-list").html(html);
 		  }
 		});
     });
 });
+
+var filter = function(attr, list) {
+	translate = {"date": "fsmDateCreated", "image": "fsmImageUrl"};
+	filterBy = translate[attr];
+	var newData = [];
+	for (var i=0, len=list.length; i<len; i++) {
+    	if (!list[i].hasOwnProperty(filterBy)) {
+    		console.log("filtering");
+    	} else {
+    		newData.push(list[i])
+    	}
+    }
+    return newData;
+}
